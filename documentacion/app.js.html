@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adding favicon -->
+    
+
+    <!-- Adding meta -->
+    
+
+    <!-- Adding external script-->
+    
+
+    <!-- Adding external style-->
+    
+
+    <!-- Adding scripts-->
+    
+
+    <!-- Adding style-->
+    
+
+    <!-- Adding overlay script-->
+    
+
+    <!-- Adding overlay style-->
+    
+
+
+    <title>
+      app.js
+    </title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/third-party/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/third-party/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/reset.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-base.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-dark.css">
+    
+    <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path
+                    d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z" />
+                <path
+                    d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z" />
+            </g>
+        </symbol>
+        <symbol id='search-icon' viewBox="0 0 512 512">
+            <g>
+                <g>
+                    <path
+                        d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z" />
+                </g>
+            </g>
+            <g>
+                <g>
+                    <path
+                        d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z" />
+                </g>
+            </g>
+        </symbol>
+        <symbol id="down-icon" viewBox="0 0 16 16">
+            <path 
+                fill-rule="evenodd" 
+                clip-rule="evenodd" 
+                d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"
+            >
+            </path>
+        </symbol>
+    </defs>
+</svg>
+  </head>
+
+  <body>
+
+    <nav class="navbar" id="navbar">
+      <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">Consulta del Clima - Fetch API</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><ul><li class="menu-li"><a href='https://github.com/franj1748/consulta-del-clima-con-fetch-api.git' class=' menu-link' id='' target='_blank'>Proyecto en GitHub</a></li><li class="menu-li"><a href='https://github.com/franj1748/configuracion-jsdoc.git' class=' menu-link' id='' target='_blank'>Archivos de configuración para JSDoc</a></li></ul><div class="accordion collapsed" id="2587010" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=""><a href="global.html#buscarClima">buscarClima</a></li><li class="accordion-list" id=""><a href="global.html#consultarAPi">consultarAPi</a></li><li class="accordion-list" id=""><a href="global.html#formulario">formulario</a></li><li class="accordion-list" id=""><a href="global.html#imprimirClima">imprimirClima</a></li><li class="accordion-list" id=""><a href="global.html#mostrarAlerta">mostrarAlerta</a></li><li class="accordion-list" id=""><a href="global.html#otrosDatos">otrosDatos</a></li><li class="accordion-list" id=""><a href="global.html#passValidation">passValidation</a></li><li class="accordion-list" id=""><a href="global.html#placeholder">placeholder</a></li><li class="accordion-list" id=""><a href="global.html#regexp">regexp</a></li><li class="accordion-list" id=""><a href="global.html#resultado">resultado</a></li><li class="accordion-list" id=""><a href="global.html#validarCampo">validarCampo</a></li></ul> </div>
+      
+        <div class="navbar-resize" id="navbar-resize">
+          <div class="resize-dots-container">
+            <div class="dots"></div>
+            <div class="dots"></div>
+            <div class="dots"></div>
+          </div> 
+        </div>
+      
+
+    </nav>
+    <div class="navbar-ham" id="navbar-ham">
+      <div>
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+      </div>
+    </div>
+
+    <div id="main" class="main-content">
+      
+      <h1 id='page-title' class="page-title">
+        app.js
+      </h1>
+      
+
+      
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Formulario de búsqueda.
+ * @type {HTMLElement} 
+ */
+const formulario   = document.querySelector('#formulario');
+/**
+ * Contenedor donde aparece las temperaturas según los resultados de la búsqueda. 
+ * @type {HTMLElement} 
+ */
+const resultado    = document.querySelector('#resultado');
+/**
+ * Contenedor de los datos adicionales provenientes de la búsqueda. 
+ * @type {HTMLElement} 
+ */
+const otrosDatos   = document.querySelector('#otrosDatos');
+/**
+ * Expresión regular para validar el campo de ciudad del formulario.
+ * @type {RegExp} 
+ */
+const regexp  	   = /^[a-zA-ZÀ-ÿ\s]{1,20}$/; // Letras y espacios, pueden llevar acentos. De 1 a 20 caracteres.
+/**
+ * Valor booleano que determinada si la validación del campo de cuidad fue exitosa o no. 
+ * @type {boolean} 
+ */
+let passValidation = false; 
+
+document.addEventListener('DOMContentLoaded', () => {
+
+	formulario.addEventListener('submit', buscarClima);
+	formulario[id ='cuidad'].addEventListener('keyup', validarCampo);
+	formulario[id ='cuidad'].addEventListener('blur', validarCampo);
+
+});
+
+/**
+ * Validación del campo de formulario donde se ingresa la ciudad. 
+ * @param {Event} e El evento que se desencadena.
+ */
+function validarCampo(e) {
+	
+	if(regexp.test(e.target.value)){
+		e.target.classList.remove('is-invalid');
+		e.target.classList.add('is-valid');
+		passValidation = true
+	} else {
+		e.target.classList.add('is-invalid');
+		e.target.classList.remove('is-valid');
+		passValidation = false; 
+	}
+
+}
+
+/**
+ * Al hacer clic en el botón de Obtener clima, se validan los campos del formulario, si las validaciones son exitosas, se consulta la API de los datos del clima. 
+ * @param {Event} e El evento que se desencadena.
+ * @returns Si ocurre algún error, devuelve el control a la función que llamó. 
+ */
+function buscarClima(e) {
+	
+	e.preventDefault();
+
+	const country = formulario[id ='country'].value;
+	const cuidad  = formulario[id ='cuidad'].value;
+
+	if (country == '' || cuidad == '') {
+
+		mostrarAlerta('¡Error!', 'Todos los campos son obligatorios', 'error', 'Cerrar');
+		return
+	}
+
+	if(!passValidation){
+
+		formulario[id ='cuidad'].focus();
+		return
+	}
+
+	consultarAPi(cuidad, country);
+
+}
+
+/**
+ * Consulta a la API del clima. 
+ * @param {FormDataEntryValue} cuidad El valor del campo del formulario para la ciudad.
+ * @param {FormDataEntryValue} country El valor del campo del formulario para el país.
+ */
+function consultarAPi(cuidad, country) {
+
+	const apiKey = '29482357a5b7a7395d3831cbe8c9a7cd';
+	const url    = `https://api.openweathermap.org/data/2.5/weather?q=${cuidad},${country}&amp;lang=sp&amp;units=metric&amp;appid=${apiKey}`
+	
+	placeholder();
+
+	fetch(url)
+		.then(respuesta => respuesta.json())
+		.then(data => {
+			if (data.cod == '404') {
+				mostrarAlerta('¡Error!', 'Cuidad no encontrada', 'error', 'Cerrar');
+				return;
+			}
+
+			imprimirClima(data);
+		})
+}
+
+/**
+ * Imprime los resultados de la consulta a la API en el HTML. 
+ * @param {JSON} datos La respuesta JSON de la consulta a la API.
+ */
+function imprimirClima(datos) {
+
+	//En orden de aparición: longitud, latitud, descripción del clima, temperatura (Celsius), temperatura máxima del día, temperatura mínima del día, presión atmosférica (hPa), humedad (%), velocidad del viento (metro/seg), nubosidad (%), nombre de la cuidad. 
+	const {coord:{lon, lat}, weather:{0:{description, icon}}, main:{temp, temp_min, temp_max, pressure, humidity}, wind:{speed}, clouds:{all}, name} = datos;
+
+	resultado.innerHTML = `
+		&lt;p class="display-6 mt-4 text-white">Temperatura en ${name}&lt;/p>
+		&lt;p class="display-1 mt-2 text-white">&lt;abbr title="Grados Celsius" class="initialism">&lt;strong>${temp}&lt;/strong>&lt;/abbr> &amp;#8451&lt;/p>
+		&lt;p class="mt-2 mb-1 text-white">Máxima: &lt;strong>${temp_max}&lt;/strong> &amp;#8451&lt;/p>
+		&lt;p class="text-white">Mínima: &lt;strong>${temp_min}&lt;/strong> &amp;#8451&lt;/p>`; 
+
+	otrosDatos.innerHTML = `
+		&lt;li class="list-group-item text-start d-flex justify-content-center lh-sm">
+			&lt;div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;h6 class="my-0">Clima&lt;/h6>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;small class="text-muted">${description.toUpperCase()}&lt;/small>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+                    &lt;img class="" width="100" height="100" src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="icono_clima">
+                &lt;/div>
+			&lt;/div>
+		&lt;/li>
+		&lt;li class="list-group-item text-start d-flex justify-content-center lh-sm">
+			&lt;div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;h6 class="my-0">Ubicación&lt;/h6>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;small class="text-muted">Longitud: ${lon}&amp;#176;&lt;/small>&lt;br>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;small class="text-muted">Latitud: ${lat}&amp;#176;&lt;/small>
+				&lt;/div>
+			&lt;/div>
+		&lt;/li>
+		&lt;li class="list-group-item text-start d-flex justify-content-center lh-sm">
+			&lt;div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;h6 class="my-0">Atmósfera&lt;/h6>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;small class="text-muted">Presión: ${pressure}hPa&lt;/small>&lt;br>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;small class="text-muted">Humedad: ${humidity}%&lt;/small>
+				&lt;/div>
+			&lt;/div>
+		&lt;/li>
+		&lt;li class="list-group-item text-start d-flex justify-content-center lh-sm">
+			&lt;div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;h6 class="my-0">Vientos&lt;/h6>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;small class="text-muted">Velocidad: ${speed}m/s&lt;/small>&lt;br>
+				&lt;/div>
+			&lt;/div>
+		&lt;/li>
+		&lt;li class="list-group-item text-start d-flex justify-content-center lh-sm">
+			&lt;div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;h6 class="my-0">Nubosidad&lt;/h6>
+				&lt;/div>
+				&lt;div class="d-flex justify-content-center align-items-center">
+					&lt;small class="text-muted">Densidad: ${all}%&lt;/small>&lt;br>
+				&lt;/div>
+			&lt;/div>
+		&lt;/li>`;
+
+}
+
+/**
+ * Imprime un efecto de espera mientras se cargan los resultados de la API. 
+ */
+function placeholder() {
+	
+	resultado.innerHTML = `
+		&lt;p class="display-6 mt-4 text-white placeholder-glow">&lt;span class="placeholder col-10">&lt;/span>&lt;/p>
+		&lt;p class="display-1 mt-2 text-white placeholder-glow">&lt;abbr title="Grados Celsius" class="initialism">&lt;strong class="placeholder col-8">&lt;/strong>&lt;/abbr>&lt;/p>
+		&lt;p class="mt-2 mb-1 text-white placeholder-glow">&lt;strong class="placeholder col-5 placeholder-lg">&lt;/strong>&lt;/p>
+		&lt;p class="text-white placeholder-glow">&lt;strong class="placeholder col-5 placeholder-lg">&lt;/strong>&lt;/p>
+	`;
+}
+
+/**
+ * Imprime alertas desde cualquier parte.  
+ * @param {String} titulo Titulo de la alerta.
+ * @param {String} mensaje Cuerpo de la alerta.
+ * @param {String} tipo El tipo de alerta. 
+ * @param {String} btn Texto para el botón de cerrar. 
+ */
+function mostrarAlerta(titulo, mensaje, tipo, btn){
+	swal({
+		title: titulo,
+		text: mensaje,
+		icon: tipo,
+		button: btn,
+		closeOnClickOutside: false,
+		closeOnEsc: false,
+	});
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    </div>
+
+    <footer class="footer" id="footer">
+      Creado por Francisco Elis
+    </footer>
+
+    <script src="scripts/third-party/prettify.js"></script>
+    <script src="scripts/third-party/lang-css.js"></script>
+    <script type="text/javascript" src="scripts/misc.js"></script>
+
+    <script>prettyPrint();</script>
+    <script src="scripts/linenumber.js"></script>
+    <script src="scripts/fix-code-block.js"></script>
+    <script src="scripts/fix-navbar.js"></script>
+    
+      <script src="scripts/search.js"></script>
+      <script src="scripts/third-party/fuse.js"></script>
+      <script>
+        var list = [{"title":"buscarClima","link":"<a href=\"global.html#buscarClima\">buscarClima</a>"},{"title":"consultarAPi","link":"<a href=\"global.html#consultarAPi\">consultarAPi</a>"},{"title":"formulario","link":"<a href=\"global.html#formulario\">formulario</a>"},{"title":"imprimirClima","link":"<a href=\"global.html#imprimirClima\">imprimirClima</a>"},{"title":"mostrarAlerta","link":"<a href=\"global.html#mostrarAlerta\">mostrarAlerta</a>"},{"title":"otrosDatos","link":"<a href=\"global.html#otrosDatos\">otrosDatos</a>"},{"title":"passValidation","link":"<a href=\"global.html#passValidation\">passValidation</a>"},{"title":"placeholder","link":"<a href=\"global.html#placeholder\">placeholder</a>"},{"title":"regexp","link":"<a href=\"global.html#regexp\">regexp</a>"},{"title":"resultado","link":"<a href=\"global.html#resultado\">resultado</a>"},{"title":"validarCampo","link":"<a href=\"global.html#validarCampo\">validarCampo</a>"}];
+        var options = 
+          setupSearch(list, options)
+      </script>
+    
+
+    
+
+    
+      <script src="scripts/resize.js"></script>
+      <script type="text/javascript">
+        var option = {"min":"300","max":"600"}
+        setupResizeOptions(option)
+      </script>
+    
+
+    
+
+
+  </body>
+
+</html>
